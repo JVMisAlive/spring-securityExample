@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>UserEdit</title>
+</head>
+
+<body>
+
+<div align="center">
+
+    <h2>Edit User</h2>
+
+
+    <form th:action="@{/admin/edit/${userEdit.getId()}}" th:object="${userEdit}" method="post">
+
+        <table>
+
+            <tr>
+                <td><label>Id:</label></td>
+                <td><input th:type="number" th:field="*{id}" readonly></td>
+            </tr>
+
+            <tr>
+                <td><label>Nickname:</label></td>
+                <td><input th:type="text" th:field="*{nickname}"></td>
+            </tr>
+
+            <tr>
+                <td><label>Name:</label></td>
+                <td><input th:type="text" th:field="*{firstName}"></td>
+            </tr>
+
+            <tr>
+                <td><label>Surname:</label></td>
+                <td><input th:type="text" th:field="*{lastName}"></td>
+            </tr>
+
+            <tr>
+                <td><label>Age:</label></td>
+                <td><input th:type="number" th:field="*{age}"></td>
+            </tr>
+
+            <tr>
+                <td><label>Email:</label></td>
+                <td><input th:type="text" th:field="*{email}"></td>
+            </tr>
+
+            <tr>
+                <td><label>Password:</label></td>
+                <td><input th:type="password" th:field="*{password}"></td>
+            </tr>
+
+            <tr>
+                <td><label>Confirm Password:</label></td>
+                <td><input th:type="password" th:field="*{confirmPassword}"></td>
+
+            </tr>
+
+            <tr>
+                <td><label>Права доступа:</label></td>
+                <td>
+                    <select name="editRole" size="1" multiple>
+                        <option th:each="role : ${allRoles}"
+                                th:value="${role}" th:text="${role.name}">
+                        </option>
+                    </select>
+                </td>
+            </tr>
+
+            <tr>
+                <td><label>Action:</label></td>
+                <td><input th:type="submit" th:value="Edit"></td>
+            </tr>
+        </table>
+
+    </form>
+
+    <h4><a th:href="@{/admin}">Return</a></h4>
+    <h4><a th:href="@{/logout}">Logout</a></h4>
+</div>
+
+</body>
+</html>
