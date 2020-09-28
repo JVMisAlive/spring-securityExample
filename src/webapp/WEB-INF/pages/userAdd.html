@@ -19,7 +19,6 @@
         <table border="1">
 
             <tr>
-                <th>Id</th>
                 <th>Nickname</th>
                 <th>Name</th>
                 <th>Surname</th>
@@ -32,10 +31,6 @@
             </tr>
 
             <tr>
-                <td>
-                    <input th:type="number" th:field="*{id}">
-                </td>
-
                 <td>
                     <input th:type="text" th:field="*{nickname}">
                 </td>
@@ -79,7 +74,6 @@
                 </td>
 
             </tr>
-            <p th:text="${passwordError}"></p>
         </table>
     </form>
 

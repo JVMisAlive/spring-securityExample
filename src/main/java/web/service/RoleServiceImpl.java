@@ -5,9 +5,9 @@ import org.springframework.stereotype.Service;
 import web.dao.RoleDao;
 import web.model.Role;
 
-
 import javax.transaction.Transactional;
 import java.util.List;
+import java.util.Set;
 
 @Service
 @Transactional
@@ -36,7 +36,7 @@ public class RoleServiceImpl implements RoleService {
     }
 
     @Override
-    public Role getRoleById(int id) {
+    public Role getRoleById(Long id) {
         return roleDao.getRoleById(id);
     }
 
@@ -48,5 +48,10 @@ public class RoleServiceImpl implements RoleService {
     @Override
     public Role getRoleByName(String name) {
         return roleDao.getRoleByName(name);
+    }
+
+    @Override
+    public Set<Role> getViewRole(String[] view) {
+        return roleDao.getViewRole(view);
     }
 }

@@ -1,6 +1,5 @@
 package web.controller;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -15,16 +14,10 @@ public class UserController {
     private UserService userService;
     private RoleService roleService;
 
-    @Autowired
-    public void setRoleService(RoleService roleService) {
+    public UserController(UserService userService, RoleService roleService) {
+        this.userService = userService;
         this.roleService = roleService;
     }
-
-    @Autowired
-    public void setUserService(UserService userService) {
-        this.userService = userService;
-    }
-
 
     @GetMapping("/user")
     public String userInfo(Model model) {

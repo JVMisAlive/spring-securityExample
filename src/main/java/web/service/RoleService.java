@@ -3,6 +3,7 @@ package web.service;
 import web.model.Role;
 
 import java.util.List;
+import java.util.Set;
 
 public interface RoleService {
     void saveRole(Role role);
@@ -11,9 +12,11 @@ public interface RoleService {
 
     void updateRole(Role role);
 
-    Role getRoleById(int id);
+    Role getRoleById(Long id);
 
     List<Role> getAllRoles();
 
     Role getRoleByName(String name);
+
+    Set<Role> getViewRole(String[] view);
 }

@@ -60,7 +60,7 @@ public class HibernateConfig {
         final LocalContainerEntityManagerFactoryBean entityManager = new LocalContainerEntityManagerFactoryBean();
         entityManager.setDataSource(dataSource);
         entityManager.setPackagesToScan("web");
-        entityManager.setJpaProperties(hibernateProperties());
+        entityManager.setJpaProperties(hibernateProperties);
         entityManager.setPersistenceProviderClass(HibernatePersistenceProvider.class);
         entityManager.afterPropertiesSet();
         return entityManager.getObject();

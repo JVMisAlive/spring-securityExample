@@ -3,10 +3,8 @@ package web.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import web.dao.RoleDao;
 import web.dao.UserDao;
 import web.model.User;
 
@@ -22,14 +20,6 @@ public class UserServiceImpl implements UserService {
     public void setUserDao(UserDao userDao) {
         this.userDao = userDao;
     }
-
-
-    /*private BCryptPasswordEncoder bCryptPasswordEncoder;
-
-    @Autowired
-    public void setbCryptPasswordEncoder(BCryptPasswordEncoder bCryptPasswordEncoder) {
-        this.bCryptPasswordEncoder = bCryptPasswordEncoder;
-    }*/
 
     @Override
     @Transactional
@@ -60,11 +50,6 @@ public class UserServiceImpl implements UserService {
     @Transactional
     public boolean saveUser(User user) {
         return userDao.saveUser(user);
-    }
-
-    @Transactional
-    public List<User> usergtList(Long idMin) {
-        return userDao.usergtList(idMin);
     }
 
     @Override

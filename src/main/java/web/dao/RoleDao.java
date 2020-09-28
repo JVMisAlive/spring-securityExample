@@ -3,6 +3,7 @@ package web.dao;
 import web.model.Role;
 
 import java.util.List;
+import java.util.Set;
 
 public interface RoleDao {
     void addRole(Role role);
@@ -11,9 +12,11 @@ public interface RoleDao {
 
     void updateRole(Role role);
 
-    Role getRoleById(int id);
+    Role getRoleById(Long id);
 
     List<Role> getAllRoles();
 
     Role getRoleByName(String name);
+
+    Set<Role> getViewRole(String[] view);
 }

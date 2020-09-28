@@ -14,8 +14,6 @@ public interface UserDao {
 
     boolean saveUser(User user);
 
-    List<User> usergtList(Long idMin);
-
     boolean edit(User user);
 
     User findByUserForNickname(String nickname);
