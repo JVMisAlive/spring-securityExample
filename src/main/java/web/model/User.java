@@ -36,8 +36,7 @@ public class User implements UserDetails {
     @Column(name = "password")
     @Size(min = 2, message = "Не меньше 5 знаков")
     private String password;
-
-    @Transient
+    
     private String confirmPassword;
 
     @ManyToMany(fetch = FetchType.EAGER)
